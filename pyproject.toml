@@ -4,10 +4,10 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "agentic-ai-reference-architecture-exercise"
-version = "0.1.0"
+version = "0.2.0"
 description = "AWS agentic AI reference architecture portfolio exercise"
 requires-python = ">=3.11"
-dependencies = []
+dependencies = ["pydantic>=2.8,<3"]
 
 [project.optional-dependencies]
 dev = ["pytest>=8.0", "ruff>=0.6"]
