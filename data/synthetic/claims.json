@@ -1,0 +1,11 @@
+[
+  {"claim_id":"CLM-1001","vin":"SYNTH-VIN-0001","component":"alternator","repair_date":"2026-09-01","reported_mileage":21000,"failure_cause":"manufacturing_defect","repair_cost":"850.00","documentation_complete":true,"aftermarket_modification":false},
+  {"claim_id":"CLM-1002","vin":"SYNTH-VIN-0002","component":"alternator","repair_date":"2026-09-01","reported_mileage":31000,"failure_cause":"manufacturing_defect","repair_cost":"850.00","documentation_complete":false,"aftermarket_modification":false},
+  {"claim_id":"CLM-1003","vin":"SYNTH-VIN-0002","component":"alternator","repair_date":"2026-09-01","reported_mileage":31000,"failure_cause":"unknown","repair_cost":"850.00","documentation_complete":true,"aftermarket_modification":false},
+  {"claim_id":"CLM-1004","vin":"SYNTH-VIN-0004","component":"alternator","repair_date":"2026-09-01","reported_mileage":42000,"failure_cause":"manufacturing_defect","repair_cost":"850.00","documentation_complete":true,"aftermarket_modification":false},
+  {"claim_id":"CLM-1005","vin":"SYNTH-VIN-0003","component":"alternator","repair_date":"2026-09-01","reported_mileage":28000,"failure_cause":"manufacturing_defect","repair_cost":"850.00","documentation_complete":true,"aftermarket_modification":false},
+  {"claim_id":"CLM-1006","vin":"SYNTH-VIN-0005","component":"alternator","repair_date":"2026-09-01","reported_mileage":15000,"failure_cause":"excluded_modification","repair_cost":"850.00","documentation_complete":true,"aftermarket_modification":true},
+  {"claim_id":"CLM-1007","vin":"SYNTH-VIN-0006","component":"alternator","repair_date":"2026-09-01","reported_mileage":16000,"failure_cause":"unrelated_modification","repair_cost":"850.00","documentation_complete":true,"aftermarket_modification":true},
+  {"claim_id":"CLM-1009","vin":"SYNTH-VIN-9999","component":"alternator","repair_date":"2026-09-01","reported_mileage":18000,"failure_cause":"manufacturing_defect","repair_cost":"850.00","documentation_complete":true,"aftermarket_modification":false},
+  {"claim_id":"CLM-1010","vin":"SYNTH-VIN-0009","component":"alternator","repair_date":"2026-09-01","reported_mileage":24500,"failure_cause":"manufacturing_defect","repair_cost":"850.00","documentation_complete":true,"aftermarket_modification":false}
+]
