@@ -1,18 +1,16 @@
 # Roadmap
 
-## V1 — Orchestration and tools
+## V1 — Deterministic foundation
 
-**Goal:** prove that an agent can choose and sequence deterministic tools while the business rules remain outside the model.
+- [x] Define claim, vehicle, and decision schemas
+- [x] Implement `get_claim_details`
+- [x] Implement `get_vehicle_details`
+- [x] Implement deterministic `calculate_coverage`
+- [x] Add stable decision and reason-code contracts
+- [x] Complete and pass the first 10 evaluation cases
+- [ ] Add Strands orchestration and tool-selection traces
 
-- [ ] Define claim, vehicle, and decision schemas
-- [ ] Implement `get_claim_details`
-- [ ] Implement `get_vehicle_details`
-- [ ] Implement deterministic `calculate_coverage`
-- [ ] Add Strands orchestration
-- [ ] Capture tool-selection traces
-- [ ] Complete the first 10 evaluation cases
-
-**Exit criteria:** deterministic cases return the expected decision, selected tools, and tool arguments.
+**Current result:** 10/10 golden cases pass locally. The next increment is V1.1: place a Strands agent above these tested tools and measure whether it chooses and calls them correctly.
 
 ## V2 — Retrieval
 
