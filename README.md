@@ -72,7 +72,7 @@ The starter implementation intentionally runs locally with synthetic data before
 
 ## Responsible-use boundaries
 
-- No Toyota, dealer, customer, production, or confidential data.
+- No OEM dealer, customer, production, or confidential data.
 - No autonomous claim approval or write-back.
 - Recommendations require evidence and expose uncertainty.
 - High-risk, ambiguous, or contradictory cases route to human review.
