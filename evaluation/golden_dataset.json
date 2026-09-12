@@ -1,0 +1,20 @@
+[
+  {
+    "test_id": "WARRANTY-001",
+    "claim_id": "CLM-1001",
+    "question": "Is CLM-1001 eligible under the synthetic basic warranty?",
+    "expected_decision": "APPROVE",
+    "expected_tools": ["get_claim_details", "get_vehicle_details", "calculate_coverage"],
+    "required_citations": [],
+    "tags": ["happy-path", "deterministic"]
+  },
+  {
+    "test_id": "WARRANTY-002",
+    "claim_id": "CLM-1002",
+    "question": "Can CLM-1002 be approved with its current evidence?",
+    "expected_decision": "HUMAN_REVIEW",
+    "expected_tools": ["get_claim_details", "get_vehicle_details", "calculate_coverage"],
+    "required_citations": [],
+    "tags": ["missing-evidence", "abstention"]
+  }
+]
