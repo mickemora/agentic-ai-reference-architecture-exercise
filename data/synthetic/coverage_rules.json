@@ -1,0 +1,6 @@
+{
+  "policy_reference": "BASIC-WARRANTY-001",
+  "max_age_months": 36,
+  "max_mileage": 36000,
+  "mileage_conflict_tolerance": 100
+}
