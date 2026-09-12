@@ -1,20 +1,12 @@
 [
-  {
-    "test_id": "WARRANTY-001",
-    "claim_id": "CLM-1001",
-    "question": "Is CLM-1001 eligible under the synthetic basic warranty?",
-    "expected_decision": "APPROVE",
-    "expected_tools": ["get_claim_details", "get_vehicle_details", "calculate_coverage"],
-    "required_citations": [],
-    "tags": ["happy-path", "deterministic"]
-  },
-  {
-    "test_id": "WARRANTY-002",
-    "claim_id": "CLM-1002",
-    "question": "Can CLM-1002 be approved with its current evidence?",
-    "expected_decision": "HUMAN_REVIEW",
-    "expected_tools": ["get_claim_details", "get_vehicle_details", "calculate_coverage"],
-    "required_citations": [],
-    "tags": ["missing-evidence", "abstention"]
-  }
+  {"test_id":"WARRANTY-001","claim_id":"CLM-1001","expected_outcome":"DECISION","expected_decision":"APPROVE","expected_reason_codes":["ELIGIBLE"]},
+  {"test_id":"WARRANTY-002","claim_id":"CLM-1002","expected_outcome":"DECISION","expected_decision":"HUMAN_REVIEW","expected_reason_codes":["MISSING_DOCUMENTATION"]},
+  {"test_id":"WARRANTY-003","claim_id":"CLM-1003","expected_outcome":"DECISION","expected_decision":"HUMAN_REVIEW","expected_reason_codes":["UNKNOWN_FAILURE_CAUSE"]},
+  {"test_id":"WARRANTY-004","claim_id":"CLM-1004","expected_outcome":"DECISION","expected_decision":"DENY","expected_reason_codes":["OUTSIDE_MILEAGE_LIMIT"]},
+  {"test_id":"WARRANTY-005","claim_id":"CLM-1005","expected_outcome":"DECISION","expected_decision":"DENY","expected_reason_codes":["OUTSIDE_TIME_LIMIT"]},
+  {"test_id":"WARRANTY-006","claim_id":"CLM-1006","expected_outcome":"DECISION","expected_decision":"DENY","expected_reason_codes":["EXCLUDED_MODIFICATION"]},
+  {"test_id":"WARRANTY-007","claim_id":"CLM-1007","expected_outcome":"DECISION","expected_decision":"HUMAN_REVIEW","expected_reason_codes":["UNRELATED_MODIFICATION"]},
+  {"test_id":"WARRANTY-008","claim_id":"CLM-9999","expected_outcome":"ERROR","expected_error":"Synthetic claim not found"},
+  {"test_id":"WARRANTY-009","claim_id":"CLM-1009","expected_outcome":"ERROR","expected_error":"Synthetic vehicle not found"},
+  {"test_id":"WARRANTY-010","claim_id":"CLM-1010","expected_outcome":"DECISION","expected_decision":"HUMAN_REVIEW","expected_reason_codes":["CONFLICTING_INFORMATION"]}
 ]
