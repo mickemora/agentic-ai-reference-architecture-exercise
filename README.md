@@ -2,7 +2,7 @@
 
 A hands-on, production-minded AWS portfolio project demonstrating a reusable enterprise pattern across **orchestration, retrieval, memory, tools, guardrails, evaluation, and observability**.
 
-> Status: V1 deterministic foundation complete — 10/10 golden scenarios passing. Strands orchestration is next.
+> Status: V1.1 orchestration implemented — deterministic and offline orchestration suites each pass 10/10. Live Strands/Bedrock benchmarking is the next checkpoint.
 
 ## Business scenario
 
@@ -50,6 +50,17 @@ flowchart TD
 - Ten-case golden evaluation dataset and repeatable runner
 - Unit tests, architectural documentation, and decision records
 
+## Implemented in V1.1
+
+- Local Strands agent configured for an Amazon Bedrock model
+- Controlled tool registry around the three deterministic services
+- Explicit orchestration instructions and trust boundaries
+- Per-tool trace capture for tool name, sequence, arguments, result, and error
+- Deterministic final-response formatting from validated coverage output
+- Offline orchestration baseline that requires neither Strands nor AWS
+- Ten orchestration scenarios covering normal, ambiguous, missing-record, bypass, and VIN-substitution requests
+- Metrics for tool selection, order, argument accuracy, and decision fidelity
+
 ## Quick start
 
 ```bash
@@ -58,8 +69,30 @@ source .venv/bin/activate
 pip install -e ".[dev]"
 pytest
 python -m evaluation.run_evaluation
+python -m evaluation.run_orchestration_evaluation
 python -m src.agent.app --claim-id CLM-1001
 ```
+
+### Run the live Strands path
+
+Configure AWS credentials with permission to invoke an enabled Amazon Bedrock model, then install the optional agent dependency:
+
+```bash
+pip install -e ".[dev,agent]"
+export AWS_REGION=us-west-2
+export BEDROCK_MODEL_ID=<your-enabled-bedrock-model-id>
+
+python -m src.orchestration.agent \
+  --prompt "Review claim CLM-1001 and explain the recommendation."
+```
+
+Run the live 10-case benchmark:
+
+```bash
+python -m evaluation.run_orchestration_evaluation --mode live
+```
+
+The live runner invokes Amazon Bedrock and may incur model usage charges. Its result is intentionally reported separately from the offline baseline.
 
 ## Documentation
 
@@ -67,8 +100,10 @@ python -m src.agent.app --claim-id CLM-1001
 - [Problem statement](docs/01-problem-statement.md)
 - [V1 architecture](docs/02-v1-architecture.md)
 - [Data model](docs/03-data-model.md)
+- [V1.1 orchestration](docs/04-orchestration.md)
 - [ADR-001: Deterministic business rules](docs/decisions/ADR-001-deterministic-business-rules.md)
 - [ADR-002: Synthetic data only](docs/decisions/ADR-002-synthetic-data-only.md)
+- [ADR-003: Agent orchestrates; rules remain deterministic](docs/decisions/ADR-003-agent-orchestrates-rules-remain-deterministic.md)
 
 ## Responsible-use boundaries
 

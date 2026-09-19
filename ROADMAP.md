@@ -8,9 +8,11 @@
 - [x] Implement deterministic `calculate_coverage`
 - [x] Add stable decision and reason-code contracts
 - [x] Complete and pass the first 10 evaluation cases
-- [ ] Add Strands orchestration and tool-selection traces
+- [x] Add Strands orchestration and tool-selection traces
+- [x] Add 10-case offline orchestration contract evaluation
+- [ ] Run and benchmark the live orchestration dataset against Amazon Bedrock
 
-**Current result:** 10/10 golden cases pass locally. The next increment is V1.1: place a Strands agent above these tested tools and measure whether it chooses and calls them correctly.
+**Current result:** V1 deterministic cases and the V1.1 offline orchestration baseline both pass 10/10. The Strands/Bedrock live path is implemented but requires configured AWS credentials, model access, and a live benchmark run.
 
 ## V2 — Retrieval
 

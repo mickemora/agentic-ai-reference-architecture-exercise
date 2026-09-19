@@ -11,6 +11,7 @@ dependencies = ["pydantic>=2.8,<3"]
 
 [project.optional-dependencies]
 dev = ["pytest>=8.0", "ruff>=0.6"]
+agent = ["strands-agents>=1.0,<2"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
