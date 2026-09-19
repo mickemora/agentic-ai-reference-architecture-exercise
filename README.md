@@ -2,7 +2,7 @@
 
 A hands-on, production-minded AWS portfolio project demonstrating a reusable enterprise pattern across **orchestration, retrieval, memory, tools, guardrails, evaluation, and observability**.
 
-> Status: V1.1 orchestration implemented — deterministic and offline orchestration suites each pass 10/10. Live Strands/Bedrock benchmarking is the next checkpoint.
+> Status: V1.2 bounded Amazon Bedrock tool use implemented and validated. The model may request a read-only claim lookup; deterministic Python code retains authorization and execution control.
 
 ## Business scenario
 
@@ -23,7 +23,7 @@ flowchart TD
     RE --> D["Typed decision + reason codes"]
 ```
 
-The model will eventually orchestrate the tools. It will not own system facts, coverage rules, or authorization.
+The model orchestrates approved tools. It does not own system facts, coverage rules, or authorization.
 
 ## Target AWS architecture
 
@@ -61,6 +61,19 @@ flowchart TD
 - Ten orchestration scenarios covering normal, ambiguous, missing-record, bypass, and VIN-substitution requests
 - Metrics for tool selection, order, argument accuracy, and decision fidelity
 
+## Implemented in V1.2 — bounded Bedrock tool use
+
+- Read-only `lookup_claim_status` tool that exposes only `status` and `reason`
+- Amazon Bedrock Converse tool specification with a strict JSON input schema
+- Pydantic validation for model-supplied arguments
+- Explicit tool allowlist and rejection of unapproved tool names
+- Bounded two-call orchestration: tool request followed by final response
+- Fail-closed behavior for direct answers, malformed requests, multiple tool calls, and unknown claims
+- Live validation for known and unknown synthetic claims
+- 17-test regression suite passing at the Lab 1 checkpoint
+
+See [Lab 1: Bounded Amazon Bedrock Tool Use](docs/05-bounded-bedrock-tool-use.md) for the flow diagram, code map, controls, and validation steps.
+
 ## Quick start
 
 ```bash
@@ -72,6 +85,19 @@ python -m evaluation.run_evaluation
 python -m evaluation.run_orchestration_evaluation
 python -m src.agent.app --claim-id CLM-1001
 ```
+
+### Run the bounded Bedrock claim-status assistant
+
+```bash
+uv sync --extra dev
+export AWS_REGION=us-east-1
+export BEDROCK_MODEL_ID=<your-enabled-inference-profile-id>
+
+uv run python -m src.agent.claim_status_cli \
+  "What is the status of claim CLM-1002?"
+```
+
+The assistant uses synthetic data and exposes no write or claim-approval operation.
 
 ### Run the live Strands path
 
@@ -101,6 +127,7 @@ The live runner invokes Amazon Bedrock and may incur model usage charges. Its re
 - [V1 architecture](docs/02-v1-architecture.md)
 - [Data model](docs/03-data-model.md)
 - [V1.1 orchestration](docs/04-orchestration.md)
+- [Lab 1: Bounded Amazon Bedrock Tool Use](docs/05-bounded-bedrock-tool-use.md)
 - [ADR-001: Deterministic business rules](docs/decisions/ADR-001-deterministic-business-rules.md)
 - [ADR-002: Synthetic data only](docs/decisions/ADR-002-synthetic-data-only.md)
 - [ADR-003: Agent orchestrates; rules remain deterministic](docs/decisions/ADR-003-agent-orchestrates-rules-remain-deterministic.md)
