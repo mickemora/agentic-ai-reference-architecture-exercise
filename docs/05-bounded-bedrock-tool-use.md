@@ -1,8 +1,26 @@
 # Lab 1: Bounded Amazon Bedrock Tool Use
 
-This lab adds a deliberately small, enforceable boundary between an Amazon Bedrock model and enterprise data. The model may request a claim-status lookup, but Python code decides whether the request is valid, which tool may run, and which fields may be returned.
+![Agentic Build Lab 1 manager-view solution design](images/agentic-build-lab-1-manager-solution-design.png)
+
+## Solution summary
+
+### What it does
+
+This solution provides a business user with a natural-language way to retrieve the current status of a synthetic warranty claim. The assistant can answer questions such as "What is the status of claim CLM-1002?" while remaining strictly read-only. It cannot approve, deny, modify, or write back a claim.
+
+### How it does it
+
+Amazon Bedrock interprets the user’s intent and requests the approved `lookup_claim_status` tool. A deterministic Python control plane then validates the tool name and input, enforces a bounded interaction, and authorizes execution. The read-only tool retrieves the synthetic claim and returns only the minimum necessary fields: `status` and `reason`. Bedrock converts that validated result into a clear response for the user.
+
+The model never receives direct access to the claim repository and cannot execute a tool independently.
+
+### What it means for the business
+
+This pattern enables organizations to use flexible AI reasoning without transferring business authority to the model. It establishes clear decision rights, reduces unnecessary data exposure, creates testable and auditable behavior, and provides a safer foundation for expanding agentic AI into enterprise workflows.
 
 > **Control principle:** The model proposes. Python decides.
+
+## Technical runtime flow
 
 ![Agentic Build Lab 1 runtime flow and code map](images/agentic-build-lab-1-runtime-flow.png)
 
