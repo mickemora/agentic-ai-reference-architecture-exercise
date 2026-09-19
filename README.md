@@ -127,7 +127,7 @@ The live runner invokes Amazon Bedrock and may incur model usage charges. Its re
 - [V1 architecture](docs/02-v1-architecture.md)
 - [Data model](docs/03-data-model.md)
 - [V1.1 orchestration](docs/04-orchestration.md)
-- [Lab 1: Bounded Amazon Bedrock Tool Use](docs/05-bounded-bedrock-tool-use.md)
+- [V1.2 Lab 1: Bounded Amazon Bedrock Tool Use](docs/05-bounded-bedrock-tool-use.md)
 - [ADR-001: Deterministic business rules](docs/decisions/ADR-001-deterministic-business-rules.md)
 - [ADR-002: Synthetic data only](docs/decisions/ADR-002-synthetic-data-only.md)
 - [ADR-003: Agent orchestrates; rules remain deterministic](docs/decisions/ADR-003-agent-orchestrates-rules-remain-deterministic.md)
