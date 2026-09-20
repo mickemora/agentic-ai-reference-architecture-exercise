@@ -29,21 +29,6 @@ This repository is designed as a progressive, hands-on journey from individual a
 
 The progression intentionally moves beyond isolated AI demos. The objective is to demonstrate how **architecture, engineering, governance, evaluation, and business value** come together as agentic systems mature toward enterprise production.
 
-## V1 architecture
-
-```mermaid
-flowchart TD
-    C["Caller — future Strands agent"] --> CT["Claim tool"]
-    CT --> CR["Synthetic claim repository"]
-    C --> VT["Vehicle tool"]
-    VT --> VR["Synthetic vehicle repository"]
-    C --> RT["Coverage tool"]
-    RT --> RE["Deterministic rules engine"]
-    RE --> D["Typed decision + reason codes"]
-```
-
-The model orchestrates approved tools. It does not own system facts, coverage rules, or authorization.
-
 ## Target AWS architecture
 
 ```mermaid
