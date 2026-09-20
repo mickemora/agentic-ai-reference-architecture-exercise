@@ -1,0 +1,29 @@
+{
+  "corpus_id": "synthetic-warranty-policy-corpus-v1",
+  "version": "1.0",
+  "effective_date": "2026-01-01",
+  "market": "synthetic-us",
+  "classification": "synthetic-public-training",
+  "documents": [
+    {"document_id":"SYN-POL-001","path":"01-basic-warranty-coverage.md","category":"coverage","component":"general"},
+    {"document_id":"SYN-POL-002","path":"02-time-and-mileage-limits.md","category":"eligibility","component":"general"},
+    {"document_id":"SYN-POL-003","path":"03-required-claim-documentation.md","category":"documentation","component":"general"},
+    {"document_id":"SYN-POL-004","path":"04-aftermarket-modifications.md","category":"exclusions","component":"general"},
+    {"document_id":"SYN-POL-005","path":"05-general-coverage-exclusions.md","category":"exclusions","component":"general"},
+    {"document_id":"SYN-POL-006","path":"06-human-review-criteria.md","category":"governance","component":"general"},
+    {"document_id":"SYN-POL-007","path":"07-claim-status-definitions.md","category":"workflow","component":"general"},
+    {"document_id":"SYN-POL-008","path":"08-parts-replacement-requirements.md","category":"repair-procedure","component":"general"},
+    {"document_id":"SYN-POL-009","path":"09-dealer-submission-procedure.md","category":"submission","component":"general"},
+    {"document_id":"SYN-POL-010","path":"10-exceptional-review-procedure.md","category":"governance","component":"general"},
+    {"document_id":"SYN-POL-011","path":"11-powertrain-component-coverage.md","category":"component-coverage","component":"powertrain"},
+    {"document_id":"SYN-POL-012","path":"12-hybrid-and-electric-components.md","category":"component-coverage","component":"hybrid-electric"},
+    {"document_id":"SYN-POL-013","path":"13-diagnostic-evidence-requirements.md","category":"documentation","component":"general"},
+    {"document_id":"SYN-POL-014","path":"14-repeat-repair-guidelines.md","category":"review","component":"general"},
+    {"document_id":"SYN-POL-015","path":"15-towing-rental-and-incidental-expenses.md","category":"reimbursement","component":"general"},
+    {"document_id":"SYN-POL-016","path":"16-maintenance-responsibility.md","category":"exclusions","component":"general"},
+    {"document_id":"SYN-POL-017","path":"17-policy-version-and-effective-date.md","category":"governance","component":"general"},
+    {"document_id":"SYN-POL-018","path":"18-claim-data-discrepancies.md","category":"data-quality","component":"general"},
+    {"document_id":"SYN-POL-019","path":"19-returned-parts-handling.md","category":"parts-handling","component":"general"},
+    {"document_id":"SYN-POL-020","path":"20-appeals-and-escalation.md","category":"governance","component":"general"}
+  ]
+}

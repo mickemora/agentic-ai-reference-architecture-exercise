@@ -41,8 +41,8 @@ This roadmap follows the same V1–V10 enterprise Agentic AI journey presented i
 
 **Executive outcome:** Grounded answers from authoritative enterprise knowledge.
 
-- [ ] Write 10–20 synthetic warranty policy documents
-- [ ] Define document IDs, sections, categories, effective dates, and metadata taxonomy
+- [x] Write 10–20 synthetic warranty policy documents
+- [x] Define document IDs, sections, categories, effective dates, and metadata taxonomy
 - [ ] Create the S3 document layout
 - [ ] Define typed retrieval and citation contracts
 - [ ] Implement a local retrieval baseline
