@@ -4,9 +4,6 @@ This roadmap follows the same V1–V10 enterprise Agentic AI journey presented i
 
 ![Enterprise Agentic AI Reference Architecture](docs/images/enterprise-agentic-ai-reference-architecture.png)
 
-## V1 — Tool Use
-
-**Executive outcome:** Safe, controlled interaction with enterprise systems.
 
 ### V1.0 — Deterministic foundation
 
