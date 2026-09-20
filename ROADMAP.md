@@ -160,7 +160,3 @@ This roadmap follows the same V1–V10 enterprise Agentic AI journey presented i
 - [ ] Complete threat modeling and production-readiness review
 - [ ] Publish the final reference architecture, operating model, and tradeoffs
 - [ ] Demonstrate the complete governed workflow end to end
-
-## Completion principle
-
-A stage is complete only when its capability is implemented, evaluated, documented, and connected to a clear enterprise control or business outcome. Passing a demonstration alone is not sufficient.
