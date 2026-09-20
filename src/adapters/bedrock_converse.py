@@ -70,23 +70,17 @@ def run_claim_status_assistant(
     first_response = _converse(client, model_id, messages)
 
     if first_response.get("stopReason") != "tool_use":
-        raise ToolUseRequiredError(
-            "The model answered without requesting the required tool."
-        )
+        raise ToolUseRequiredError("The model answered without requesting the required tool.")
 
     tool_request_message = _assistant_message(first_response)
     messages.append(tool_request_message)
 
     tool_requests = [
-        block["toolUse"]
-        for block in tool_request_message.get("content", [])
-        if "toolUse" in block
+        block["toolUse"] for block in tool_request_message.get("content", []) if "toolUse" in block
     ]
 
     if len(tool_requests) != 1:
-        raise UnexpectedModelResponseError(
-            "Exactly one tool request is permitted per interaction."
-        )
+        raise UnexpectedModelResponseError("Exactly one tool request is permitted per interaction.")
 
     tool_request = tool_requests[0]
     tool_name = tool_request.get("name")
@@ -122,9 +116,7 @@ def run_claim_status_assistant(
     final_response = _converse(client, model_id, messages)
 
     if final_response.get("stopReason") != "end_turn":
-        raise UnexpectedModelResponseError(
-            "The model did not end after receiving the tool result."
-        )
+        raise UnexpectedModelResponseError("The model did not end after receiving the tool result.")
 
     final_message = _assistant_message(final_response)
     text_blocks = [
@@ -134,8 +126,6 @@ def run_claim_status_assistant(
     ]
 
     if not text_blocks:
-        raise UnexpectedModelResponseError(
-            "The final model response contained no text."
-        )
+        raise UnexpectedModelResponseError("The final model response contained no text.")
 
     return "\n".join(text_blocks)

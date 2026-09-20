@@ -21,9 +21,7 @@ CLAIM_STATUS_TOOL_CONFIG: dict[str, Any] = {
                         "properties": {
                             "claim_id": {
                                 "type": "string",
-                                "description": (
-                                    "Synthetic claim identifier in CLM-#### format."
-                                ),
+                                "description": ("Synthetic claim identifier in CLM-#### format."),
                                 "pattern": r"^CLM-\d{4}$",
                             }
                         },
