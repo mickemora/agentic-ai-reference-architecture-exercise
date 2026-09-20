@@ -2,8 +2,6 @@
 
 A hands-on, production-minded AWS portfolio project demonstrating a reusable enterprise pattern across **orchestration, retrieval, memory, tools, guardrails, evaluation, and observability**.
 
-> Status: V1.2 bounded Amazon Bedrock tool use implemented and validated. The model may request a read-only claim lookup; deterministic Python code retains authorization and execution control.
-
 ## Business scenario
 
 The reference implementation is an **Enterprise Warranty Decision Agent** operating exclusively on synthetic claims, vehicles, and policies. The system gathers structured facts, applies deterministic rules, and returns `APPROVE`, `DENY`, or `HUMAN_REVIEW` with stable reason codes and policy references.
