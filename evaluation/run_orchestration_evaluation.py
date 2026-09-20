@@ -25,12 +25,23 @@ def _arguments_match(case: dict[str, Any], result: OrchestrationResult) -> bool:
     vehicle_event = by_name.get("get_vehicle_details")
     coverage_event = by_name.get("calculate_coverage")
 
-    if expected_claim_id := case.get("expected_claim_id"):
-        if not claim_event or claim_event.arguments.get("claim_id") != expected_claim_id:
-            return False
-    if expected_vin := case.get("expected_vin"):
-        if not vehicle_event or vehicle_event.arguments.get("vin") != expected_vin:
-            return False
+    #    if expected_claim_id := case.get("expected_claim_id"):
+    #        if not claim_event or claim_event.arguments.get("claim_id") != expected_claim_id:
+    #            return False
+    #    if expected_vin := case.get("expected_vin"):
+    #        if not vehicle_event or vehicle_event.arguments.get("vin") != expected_vin:
+    #            return False
+
+    if (expected_claim_id := case.get("expected_claim_id")) and (
+        not claim_event or claim_event.arguments.get("claim_id") != expected_claim_id
+    ):
+        return False
+
+    if (expected_vin := case.get("expected_vin")) and (
+        not vehicle_event or vehicle_event.arguments.get("vin") != expected_vin
+    ):
+        return False
+
     if coverage_event:
         claim = coverage_event.arguments.get("claim", {})
         vehicle = coverage_event.arguments.get("vehicle", {})
@@ -72,7 +83,7 @@ def run(orchestrator: Orchestrator | None = None) -> OrchestrationMetrics:
         argument_passed += int(arguments_ok)
         fidelity_passed += int(fidelity_ok)
         passed += int(ok)
-        print(f'{case["test_id"]}: {"PASS" if ok else "FAIL"}')
+        print(f"{case['test_id']}: {'PASS' if ok else 'FAIL'}")
 
     return OrchestrationMetrics(
         total=len(dataset),

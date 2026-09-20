@@ -13,16 +13,12 @@ def main() -> None:
     model_id = os.getenv("BEDROCK_MODEL_ID")
 
     if not model_id:
-        raise SystemExit(
-            "BEDROCK_MODEL_ID is required. Export the Bedrock inference profile ID."
-        )
+        raise SystemExit("BEDROCK_MODEL_ID is required. Export the Bedrock inference profile ID.")
 
     region = os.getenv("AWS_REGION") or boto3.Session().region_name
 
     if not region:
-        raise SystemExit(
-            "No AWS Region is configured. Set AWS_REGION or configure an AWS profile."
-        )
+        raise SystemExit("No AWS Region is configured. Set AWS_REGION or configure an AWS profile.")
 
     question = " ".join(sys.argv[1:]).strip() or DEFAULT_QUESTION
 
