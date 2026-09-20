@@ -14,6 +14,8 @@ This is an educational reference architecture—not a production claims-decision
 
 This repository is designed as a progressive, hands-on journey from individual agent capabilities to a **production-ready enterprise Agentic AI architecture**. Each stage adds a distinct architectural capability while preserving the same core principles: controlled autonomy, deterministic boundaries, measurable behavior, and clear business context.
 
+![Enterprise Agentic AI Reference Architecture](docs/images/enterprise-agentic-ai-reference-architecture.png)
+
 | Stage | Capability | Executive outcome |
 | --- | --- | --- |
 | **V1** | Tool Use | Safe, controlled interaction with enterprise systems |
