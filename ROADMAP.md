@@ -1,7 +1,5 @@
 # Roadmap
 
-This roadmap follows the same V1–V10 enterprise Agentic AI journey presented in the main README. Each stage adds one architectural capability while preserving the project’s core principles: controlled autonomy, deterministic boundaries, measurable behavior, and clear business context.
-
 ![Enterprise Agentic AI Reference Architecture](docs/images/enterprise-agentic-ai-reference-architecture.png)
 
 
