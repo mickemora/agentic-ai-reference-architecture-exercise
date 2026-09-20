@@ -31,7 +31,6 @@ The progression intentionally moves beyond isolated AI demos. The objective is t
 ## Documentation
 
 - [Roadmap](ROADMAP.md)
-- [Problem statement](docs/01-problem-statement.md)
 - [V1 architecture](docs/02-v1-architecture.md)
 - [Data model](docs/03-data-model.md)
 - [V1.1 orchestration](docs/04-orchestration.md)
