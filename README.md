@@ -35,6 +35,8 @@ The progression intentionally moves beyond isolated AI demos. The objective is t
 - [V1 architecture](docs/02-v1-architecture.md)
 - [V1.1 orchestration](docs/04-orchestration.md)
 - [V1.2 Lab 1: Bounded Amazon Bedrock Tool Use](docs/05-bounded-bedrock-tool-use.md)
+- [V2.1 synthetic warranty policy corpus](data/policies/README.md)
+- [V2.2 policy corpus contracts](docs/06-policy-corpus-contracts.md)
 
 
 ## Quick start
@@ -48,6 +50,13 @@ python -m evaluation.run_evaluation
 python -m evaluation.run_orchestration_evaluation
 python -m src.agent.app --claim-id CLM-1001
 ```
+
+### Validate the policy corpus
+
+```bash
+uv sync --locked --all-extras --dev
+uv run python -m src.retrieval.validate_corpus
+uv run python -m pytest -q
 
 ### Run the bounded Bedrock claim-status assistant
 
