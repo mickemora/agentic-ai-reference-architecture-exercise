@@ -8,6 +8,10 @@ Before a policy can be used for retrieval or uploaded to an Amazon Bedrock Knowl
 
 This reduces the risk of grounding an AI agent on malformed, incorrectly classified, unregistered, or internally inconsistent enterprise knowledge.
 
+![V2.2 trusted policy corpus: policy content moves through contracts and automated validation to become a trusted retrieval-ready knowledge foundation](images/v2.2-trusted-policy-corpus.png)
+
+*V2.2 quality-control flow: policy content is checked against machine-enforced contracts before it becomes an approved retrieval corpus.*
+
 ## Business outcome
 
 The solution establishes a repeatable quality gate for authoritative AI knowledge sources.
