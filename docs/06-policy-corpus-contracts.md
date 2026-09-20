@@ -10,6 +10,7 @@ This reduces the risk of grounding an AI agent on malformed, incorrectly classif
 
 ![V2.2 trusted policy corpus: policy content moves through contracts and automated validation to become a trusted retrieval-ready knowledge foundation](images/v2.2-trusted-policy-corpus.png)
 
+
 *V2.2 quality-control flow: policy content is checked against machine-enforced contracts before it becomes an approved retrieval corpus.*
 
 ## Business outcome
