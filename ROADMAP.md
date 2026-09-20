@@ -4,15 +4,6 @@ This roadmap follows the same V1–V10 enterprise Agentic AI journey presented i
 
 ![Enterprise Agentic AI Reference Architecture](docs/images/enterprise-agentic-ai-reference-architecture.png)
 
-## Current checkpoint
-
-- **Current stage:** V1 — Tool Use
-- **Latest completed increment:** V1.2 — Bounded Amazon Bedrock Tool Use
-- **Next major stage:** V2 — Retrieval (RAG)
-- **Open V1 validation item:** Run the 10-case live Strands/Bedrock orchestration benchmark
-
-The V1.2 lab recorded 17 passing automated tests and successful live validation for both known and unknown synthetic claims. No write, approval, denial, or claim-modification capability is exposed.
-
 ## V1 — Tool Use
 
 **Executive outcome:** Safe, controlled interaction with enterprise systems.
